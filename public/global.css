@@ -31,12 +31,6 @@ body {
   flex-direction: column;
 }
 
-main {
-  flex: 1;
-  display: grid;
-  place-items: center;
-}
-
 /**************************************************
 Typography
 **************************************************/

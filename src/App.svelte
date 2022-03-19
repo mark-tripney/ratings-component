@@ -10,9 +10,8 @@
 
 <style>
   main {
-    text-align: center;
-    padding: 1em;
-    max-width: 240px;
-    margin: 0 auto;
+    flex: 1;
+    display: grid;
+    place-items: center;
   }
 </style>
