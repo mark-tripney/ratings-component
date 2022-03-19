@@ -23,13 +23,23 @@ Global
   padding: 0;
 }
 
+body {
+  font-family: "Overpass", sans-serif;
+  background-color: var(--veryDarkBlue);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+}
+
 /**************************************************
 Typography
 **************************************************/
-
-body {
-  font-family: "Overpass", sans-serif;
-}
 
 p {
   font-size: 0.9375rem; /* 15px, based off base of 16px */
