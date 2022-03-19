@@ -5,7 +5,7 @@
     <a
       href="https://www.frontendmentor.io/challenges/interactive-rating-component-koxpeBUmI"
       target="_blank">Frontend Mentor</a
-    >.
+    >
   </p>
 </footer>
 
