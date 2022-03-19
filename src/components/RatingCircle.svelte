@@ -1,8 +1,14 @@
 <script>
   export let rating;
+  let selected = false;
+
+  const handleClick = (e) => {
+    console.log(e.target.textContent);
+    selected = !selected;
+  };
 </script>
 
-<div class="rating-circle">
+<div class="rating-circle" class:selected on:click={handleClick}>
   <p>{rating}</p>
 </div>
 
@@ -16,6 +22,12 @@
     place-items: center;
     color: var(--mediumGrey);
     cursor: pointer;
+  }
+
+  .rating-circle.selected,
+  .rating-circle.selected:hover {
+    background-color: var(--mediumGrey);
+    color: var(--white);
   }
 
   @media (hover: hover) and (pointer: fine) {
