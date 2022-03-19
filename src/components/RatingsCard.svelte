@@ -1,3 +1,8 @@
+<script>
+  import Button from "./Button.svelte";
+  import RatingGroup from "./RatingGroup.svelte";
+</script>
+
 <div class="card">
   <div class="star-container">
     <svg
@@ -11,6 +16,13 @@
       /></svg
     >
   </div>
+  <h1>How did we do?</h1>
+  <p>
+    Please let us know how we did with your support request. All feedback is
+    appreciated to help us improve our offering!
+  </p>
+  <RatingGroup />
+  <Button buttonContent="Submit" />
 </div>
 
 <style>
@@ -21,9 +33,9 @@
       #232a34 0%,
       #181e27 99%
     );
-    min-width: 312px;
-    height: 360px;
+    width: 87%;
     max-width: 412px;
+    padding: 1.5rem;
   }
 
   .star-container {
@@ -33,6 +45,17 @@
     background-color: var(--darkBlue);
     display: grid;
     place-items: center;
-    margin: 1.5rem 0 0 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: var(--lightGrey);
+    margin-bottom: 2rem;
   }
 </style>
