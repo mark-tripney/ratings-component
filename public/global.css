@@ -37,4 +37,5 @@ Typography
 
 p {
   font-size: 0.9375rem; /* 15px, based off base of 16px */
+  line-height: 1.5;
 }
