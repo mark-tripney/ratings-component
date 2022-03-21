@@ -1,10 +1,13 @@
 <script>
+  import { createEventDispatcher } from "svelte";
   export let rating;
+
   let selected = false;
+  const dispatch = createEventDispatcher();
 
   const handleClick = (e) => {
-    console.log(e.target.textContent);
-    selected = !selected;
+    // e.currentTarget.classList.add("selected");
+    dispatch("circleClick", e.currentTarget);
   };
 </script>
 
