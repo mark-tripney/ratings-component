@@ -2,7 +2,7 @@
   export let buttonContent;
 </script>
 
-<button>
+<button on:click>
   {buttonContent.toUpperCase()}
 </button>
 
@@ -24,6 +24,12 @@
     button:hover {
       background-color: var(--white);
       color: var(--orange);
+    }
+  }
+
+  @media (min-width: 440px) {
+    button {
+      font-size: 0.9375rem;
     }
   }
 </style>
