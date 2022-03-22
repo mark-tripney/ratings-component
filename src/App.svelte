@@ -1,10 +1,16 @@
 <script>
-  import RatingsCard from "./components/RatingsCard.svelte";
-  import Footer from "./components/Footer.svelte";
+  import Footer from './components/Footer.svelte';
+  import RatingsCard from './components/RatingsCard.svelte';
+  import ThankyouCard from './components/ThankyouCard.svelte';
+  import { showThanks } from './stores';
 </script>
 
 <main>
-  <RatingsCard />
+  {#if $showThanks}
+    <ThankyouCard />
+  {:else}
+    <RatingsCard />
+  {/if}
 </main>
 <Footer />
 

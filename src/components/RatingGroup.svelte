@@ -1,18 +1,18 @@
 <script>
-  import { onMount } from "svelte";
-  import RatingCircle from "./RatingCircle.svelte";
+  import { onMount } from 'svelte';
+  import RatingCircle from './RatingCircle.svelte';
   let circles;
 
   onMount(() => {
-    const ratingGroup = document.querySelector(".rating-group");
-    circles = ratingGroup.querySelectorAll(".rating-circle");
+    const ratingGroup = document.querySelector('.rating-group');
+    circles = ratingGroup.querySelectorAll('.rating-circle');
   });
 
   const removeClass = (e) => {
     circles.forEach((circle) => {
-      circle.classList.remove("selected");
+      circle.classList.remove('selected');
     });
-    e.detail.classList.toggle("selected");
+    e.detail.classList.toggle('selected');
   };
 </script>
 

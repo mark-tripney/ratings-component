@@ -1,13 +1,14 @@
 <script>
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher } from 'svelte';
+  import { userRating } from '../stores';
   export let rating;
 
   let selected = false;
   const dispatch = createEventDispatcher();
 
   const handleClick = (e) => {
-    // e.currentTarget.classList.add("selected");
-    dispatch("circleClick", e.currentTarget);
+    userRating.update((score) => (score = e.currentTarget.innerText));
+    dispatch('circleClick', e.currentTarget);
   };
 </script>
 

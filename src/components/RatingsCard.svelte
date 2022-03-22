@@ -1,9 +1,16 @@
 <script>
-  import Button from "./Button.svelte";
-  import RatingGroup from "./RatingGroup.svelte";
+  import Button from './Button.svelte';
+  import Card from './Card.svelte';
+  import RatingGroup from './RatingGroup.svelte';
+  import { showThanks } from '../stores';
+
+  const handleSubmit = () => {
+    console.log('Clicked');
+    showThanks.update((submitted) => (submitted = true));
+  };
 </script>
 
-<div class="card">
+<Card>
   <div class="star-container">
     <svg
       class="svg-star"
@@ -22,22 +29,11 @@
     appreciated to help us improve our offering!
   </p>
   <RatingGroup />
-  <Button buttonContent="Submit" />
-</div>
+  <button on:click={handleSubmit}>Submit</button>
+  <Button buttonContent="Submit" on:click={handleSubmit} />
+</Card>
 
 <style>
-  .card {
-    border-radius: 15px;
-    background-image: radial-gradient(
-      circle at 50% 0%,
-      #232a34 0%,
-      #181e27 99%
-    );
-    width: 87%;
-    max-width: 412px;
-    padding: 1.5rem;
-  }
-
   .star-container {
     width: 40px;
     height: 40px;
