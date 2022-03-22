@@ -28,6 +28,18 @@
     cursor: pointer;
   }
 
+  .rating-circle p {
+    font-size: 0.875rem;
+  }
+
+  @media (min-width: 440px) {
+    .rating-circle {
+      width: 51px;
+      height: 51px;
+      font-size: 0.875rem;
+    }
+  }
+
   .rating-circle.selected,
   .rating-circle.selected:hover {
     background-color: var(--mediumGrey);
@@ -38,6 +50,12 @@
     .rating-circle:hover {
       background-color: var(--orange);
       color: var(--white);
+    }
+  }
+
+  @media (min-width: 440px) {
+    .rating-circle p {
+      font-size: 1rem;
     }
   }
 </style>
