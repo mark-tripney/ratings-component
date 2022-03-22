@@ -2,6 +2,7 @@
   import { onMount } from 'svelte';
   import RatingCircle from './RatingCircle.svelte';
   let circles;
+  let ratings = [1, 2, 3, 4, 5];
 
   onMount(() => {
     const ratingGroup = document.querySelector('.rating-group');
@@ -17,11 +18,9 @@
 </script>
 
 <div class="rating-group">
-  <RatingCircle rating="1" on:circleClick={removeClass} />
-  <RatingCircle rating="2" on:circleClick={removeClass} />
-  <RatingCircle rating="3" on:circleClick={removeClass} />
-  <RatingCircle rating="4" on:circleClick={removeClass} />
-  <RatingCircle rating="5" on:circleClick={removeClass} />
+  {#each ratings as rating}
+    <RatingCircle {rating} on:circleClick={removeClass} />
+  {/each}
 </div>
 
 <style>
@@ -29,5 +28,10 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 1.5rem;
+  }
+  @media (min-width: 440px) {
+    .rating-group {
+      margin-bottom: 2rem;
+    }
   }
 </style>
