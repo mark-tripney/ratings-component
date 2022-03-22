@@ -1,10 +1,11 @@
 <script>
+  import { fade } from 'svelte/transition';
   import { userRating } from '../stores';
   import Card from './Card.svelte';
 </script>
 
 <Card>
-  <div class="thankyou-wrapper">
+  <div class="thankyou-wrapper" transition:fade>
     <svg width="162" height="108" xmlns="http://www.w3.org/2000/svg"
       ><g fill="none"
         ><path
@@ -79,7 +80,7 @@
     >
     <p class="confirmation-msg">You selected {$userRating} out of 5</p>
     <h1>Thank you!</h1>
-    <p>
+    <p class="card-body-text">
       We appreciate you taking the time to give a rating. If you ever need more
       support, don’t hesitate to get in touch!
     </p>
@@ -92,10 +93,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1.3125rem;
   }
 
   svg {
-    margin: 1rem 0 1.5rem;
+    margin: 0.625rem 0 1.5rem;
   }
 
   .confirmation-msg {
@@ -104,10 +106,21 @@
     font-size: 0.875rem;
     padding: 0.5em 1em;
     border-radius: 22px;
+    margin-bottom: 1.5rem;
   }
 
   p {
     text-align: center;
     color: var(--lightGrey);
+  }
+
+  @media (min-width: 440px) {
+    svg {
+      margin-bottom: 2rem;
+    }
+    .confirmation-msg {
+      font-size: 0.9375rem;
+      margin-bottom: 2rem;
+    }
   }
 </style>
